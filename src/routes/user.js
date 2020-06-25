@@ -3,6 +3,8 @@ const bcrypt = require('bcrypt')
 
 const { connection } = require('../helper/config')
 
+const Router = express.Router()
+
 Router.get('/doc-view', (req, res) => {
     const sql = 'SELECT id, pseudo, account_creation_date, mail FROM user'
     connection.query(sql, (err, result) => {
